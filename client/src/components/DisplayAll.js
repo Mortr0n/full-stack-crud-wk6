@@ -48,7 +48,6 @@ const DisplayAll = (props) => {
             </table>
         </div>
     )
-
 }
 
 export default DisplayAll;

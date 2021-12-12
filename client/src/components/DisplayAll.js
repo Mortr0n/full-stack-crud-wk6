@@ -43,8 +43,7 @@ const DisplayAll = (props) => {
                                 </tr>
                             )
                         })
-                    }
-                    
+                    }                    
                 </tbody>
             </table>
         </div>

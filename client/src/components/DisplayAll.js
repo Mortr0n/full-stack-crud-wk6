@@ -39,7 +39,7 @@ const DisplayAll = (props) => {
                                     <td>{restaurant.cuisineType}</td>
                                     <td>{restaurant.delivery}</td>
                                     <td className="container-sm">{restaurant.dishImgUrl}</td>
-                                    <td className="container-md">Add Edit Delete</td>
+                                    <td className="container-md">Add Edit Delete</td> 
                                 </tr>
                             )
                         })

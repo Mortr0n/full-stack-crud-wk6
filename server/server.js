@@ -1,8 +1,10 @@
 const express = require('express');
-const app = express();
-app.use(express.json(), express.urlencoded({ extended: true }));
 const cors = require('cors');
+const app = express();
+
 app.use(cors());
+app.use(express.json(), express.urlencoded({ extended: true }));
+
 require('./config/mongoose.config');
 require('./routes/favrestaurant.routes')(app);
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from 'axios';
+import { navigate } from "@reach/router";
 
 const Form = (props) => {
     const [ name, setName ] = useState("");
@@ -30,11 +31,12 @@ const Form = (props) => {
             .then((res) => {
                 console.log("Success", res);
                 // trying to reset the inputs.  Not working currently
-                setName("");
-                setAddress("");
-                setCuisineType("");
-                setDishImgUrl("");
-                setDelivery("");
+                // setName("");
+                // setAddress("");
+                // setCuisineType("");
+                // setDishImgUrl("");
+                // setDelivery("");
+                navigate('/all');
             })
             .catch((err)=> {
                 console.log(err.response);

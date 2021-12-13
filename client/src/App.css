@@ -2,4 +2,11 @@
   text-align: center;
 }
 
+.foodImage {
+  width: 200px;
+  height: auto;
+}
 
+.tableHead {
+  border-radius: 10px;
+}

@@ -71,8 +71,8 @@ const DisplayAll = (props) => {
                                     <td ><img className="foodImage" src={restaurant.dishImgUrl} alt="food from restaurant" /></td>
                                     <td className="" >
                                         <Link className="btn btn-primary mt-5 me-2" to={`/favrestaurant/${restaurant._id}`}>Details</Link>
-                                        <Link className="btn btn-success mt-5 me-2" to={`/edit/${restaurant._id}`} >Edit</Link>
-                                        <button className="btn btn-danger mt-5" me-1  onClick={() => handleDeleteRestaurant(restaurant._id)}>Delete</button>
+                                        <Link className="btn btn-success mt-5 me-2" to={`/favrestaurant/edit/${restaurant._id}`} >Edit</Link>
+                                        <button className="btn btn-danger mt-5 me-1"  onClick={() => handleDeleteRestaurant(restaurant._id)}>Delete</button>
                                     </td> 
                                 </tr>
                             )

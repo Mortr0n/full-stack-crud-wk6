@@ -4,6 +4,7 @@ import Form from './components/Form';
 import DisplayAll from './components/DisplayAll';
 import DisplayOne from './components/DisplayOne';
 import EditRestaurant from './components/EditRestaurant';
+import Edit from './components/Edit';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Form path="/new"/>
         <DisplayAll default path="/all"/>
         <DisplayOne path="/favrestaurant/:id" />
-        <EditRestaurant path="/edit/:id" />
+        <Edit path="favrestaurant/edit/:id" />
       </Router>
     </div>
   );

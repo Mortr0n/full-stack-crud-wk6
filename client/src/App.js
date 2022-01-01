@@ -3,7 +3,6 @@ import { Router } from '@reach/router';
 import Form from './components/Form';
 import DisplayAll from './components/DisplayAll';
 import DisplayOne from './components/DisplayOne';
-import EditRestaurant from './components/EditRestaurant';
 import Edit from './components/Edit';
 
 function App() {

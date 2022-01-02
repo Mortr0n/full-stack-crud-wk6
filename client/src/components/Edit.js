@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { navigate } from "@reach/router";
+import Header from './Header';
 
 const Edit = (props) => {
     const [ name, setName ] = useState("");
@@ -58,7 +59,7 @@ const Edit = (props) => {
 
     return(
         <div className="container offset-4" >
-            
+            <Header />
             <h1 className="d-flex text-success">New Favorite Restaurant!</h1>
 
             <form onSubmit={handleFormSubmit} className="d-flex justify-content-center flex-column">

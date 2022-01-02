@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { navigate } from "@reach/router";
+import Header from "./Header";
 
 const DisplayOne = (props) => {
     console.log(props);
@@ -29,6 +30,7 @@ const DisplayOne = (props) => {
 
     return(
         <div className="container">
+            <Header />
             <h1>Details for  </h1>
                 {
                 restaurant && (

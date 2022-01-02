@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, navigate } from '@reach/router';
+import Header from "./Header";
 
 const DisplayAll = (props) => {
 
@@ -42,8 +43,9 @@ const DisplayAll = (props) => {
 
     return(
         <div className="container">
+            <Header />
             <h1>Favorite Restaurants</h1>
-            <Link to={`/new`} className="btn btn-info mb-4" >New Restaurant</Link>
+            
             <table className="table table-primary table-striped table-hover display-flex">
                 <thead>
                     <tr>

@@ -6,14 +6,22 @@ require("dotenv").config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const cookieParser = require('cookie-parser');
 
 // configure express app server
-app.use(cors());
+app.use(cors({
+    // adding the ability to use credentials with cookies
+    credentials: true,
+}));
 app.use(express.json(), express.urlencoded({ extended: true }));
+// configuring the server to accept and update cookies
+app.use(cookieParser());
+
 // configure mongoose to connect
 require('./config/mongoose.config');
 // add routes to listen
 require('./routes/favrestaurant.routes')(app);
+require('./routes/user.routes')(app);
 
 
 // start the server listening

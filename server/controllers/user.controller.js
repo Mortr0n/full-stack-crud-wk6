@@ -81,6 +81,12 @@ module.exports = {
             })
     },
 
-    logout: "logout"
+    logout: (req, res) => {
+        console.log("logging out");
+        res.clearCookie("usertoken"); // same name as above for saving the cookie
+        res.json({
+            message: "You have successfully logged out",
+        })
+    }
 
 }

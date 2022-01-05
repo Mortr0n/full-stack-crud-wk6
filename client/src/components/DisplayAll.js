@@ -23,7 +23,9 @@ const DisplayAll = (props) => {
     }, []);
     // triggerRequest would go in the array brackets above
     const handleDeleteRestaurant = (restaurantId) => {
-        axios.delete(`http://localhost:8000/api/favrestaurant/${restaurantId}`)
+        axios.delete(`http://localhost:8000/api/favrestaurant/${restaurantId}`, {
+            withCredentials: true,
+        })
             .then((res) => {
                 console.log(res);
                 // Filtering the restaurants array to remove the item from '

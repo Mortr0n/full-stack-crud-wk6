@@ -43,7 +43,9 @@ const Edit = (props) => {
         };
         console.log(postData);
         // 2. axios.post
-        axios.put(`http://localhost:8000/api/favrestaurant/${id}`, postData)
+        axios.put(`http://localhost:8000/api/favrestaurant/${id}`, postData, {
+            withCredentials: true,
+        })
             .then((res) => {
                 console.log("Success", res);
                 navigate('/all');

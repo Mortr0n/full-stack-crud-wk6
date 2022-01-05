@@ -8,14 +8,16 @@ const cors = require('cors');
 const app = express();
 const cookieParser = require('cookie-parser');
 
-// configure express app server
-app.use(cors({
-    // adding the ability to use credentials with cookies
-    credentials: true,
-}));
+
 app.use(express.json(), express.urlencoded({ extended: true }));
 // configuring the server to accept and update cookies
 app.use(cookieParser());
+// configure express app server
+app.use(cors({
+    origin: "http://localhost:3000",
+    // adding the ability to use credentials with cookies
+    credentials: true,
+}));
 
 // configure mongoose to connect
 require('./config/mongoose.config');

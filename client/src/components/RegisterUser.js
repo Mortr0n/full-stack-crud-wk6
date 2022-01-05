@@ -26,7 +26,7 @@ const Register = props => {
     const register = (e) => {
         e.preventDefault();
 
-        axios.post("http://localhost:8000/api/user/register",
+        axios.post("http://localhost:8000/api/users/register",
             user,       // the uer state is already an object with the
             {
                 // this will force the sending of the credentials/cookies so
@@ -35,21 +35,23 @@ const Register = props => {
                 withCredentials: true,
             })
             .then(res => {
-                console.lof(res.data);
+                console.log(res.data);
 
-                // when we successfully created teh account, reset state for
+                // when we successfully created the account, reset state for
                 // We do this if we are NOT navigating automatically away from
                 setUser({
-                    firstName: "",
-                    lastName: "",
+                    userName: "",
                     email: "",
                     password: "",
                     confirmPassword: "",
                 })
-                .catch((err) => {
-                    console.log(err);
-                    setErrs(err.response.data.errors);
-                })
+                setConfirmReg("Thank you for Registering, you can now log in!");
+                setErrs({}); // remember to reset errors state if it was successful
+                
+            })
+            .catch((err) => {
+                console.log(err);
+                setErrs(err.response.data.errors);
             });
     };
 

@@ -28,7 +28,10 @@ const Form = (props) => {
             dishImgUrl, 
         };
         // 2. axios.post
-        axios.post('http://localhost:8000/api/favrestaurant', postData)
+        axios.post('http://localhost:8000/api/favrestaurant', postData, 
+        {
+            withCredentials: true,
+        })
             .then((res) => {
                 console.log("Success", res);
                 // trying to reset the inputs.  Not working currently
@@ -41,6 +44,9 @@ const Form = (props) => {
             })
             .catch((err)=> {
                 console.log(err.response);
+                if(err.response.status === 401) {
+                    navigate('/login');
+                }
                 // Check for validation errors and setErrors equal to the object
                 if(err.response.data.errors) {
                     setErrors(err.response.data.errors);

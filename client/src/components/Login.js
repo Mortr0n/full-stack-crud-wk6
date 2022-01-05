@@ -10,13 +10,13 @@ const Login = (props) => {
 
     const login = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/user/login", {
+        axios.post("http://localhost:8000/api/users/login", {
             email: email,
             password: password,
         }, {
-            // This will force the sending of the credentials/cookies so 
-            // XMLHttpRequest from a different domain cannont set cookie
-            // unless withCredentials is set to ttrue before making the request
+            // This will force the sending of the credentials/cookies so they can be updated
+            // XMLHttpRequest from a different domain cannot set cookie values for their own domain
+            // unless withCredentials is set to true before making the request
             withCredentials: true
         })
         .then((res) => {
@@ -41,16 +41,16 @@ const Login = (props) => {
                 <div>
                     <label>Email</label>
                     <input
-                    type="text"
+                    type="email"
                     name="email"
                     value={email}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div>
                     <label>Password</label>
                     <input
-                    type="text"
+                    type="password"
                     name="password"
                     value={password}
                     onChange={(e)=> setPassword(e.target.value)}

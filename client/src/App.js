@@ -5,7 +5,6 @@ import DisplayAll from './components/DisplayAll';
 import DisplayOne from './components/DisplayOne';
 import Edit from './components/Edit';
 import Login from './components/Login';
-import Logreg from './views/LogReg';
 import LogReg from './views/LogReg';
 
 function App() {

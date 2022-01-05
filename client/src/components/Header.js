@@ -6,7 +6,7 @@ const Header = (props) => {
 
     const logout = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/user/logout', {
+        axios.post('http://localhost:8000/api/users/logout', {
             // no body required for this request, but a post requires
             // data as a 2nd paramater if we plan to send it with the configuration se
             // settings so we give it an empty object
